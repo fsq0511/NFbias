@@ -244,7 +244,7 @@ def bias_normflow(x1, x2, y1, y2, v1, v2,  z1, z2):
     # conddata2 = torch.column_stack((torch.tensor(((testdatav.values)),dtype=torch.float),torch.zeros(len(v1))))
     c_stars = torch.column_stack((trainset, label))
     indexs = np.linspace(start=0, stop= len(z1), num= len(z1)) #np.random.choice(c_stars.shape[0], len(z1), replace=False)  
-    conddata2 = flow(c_stars[indexs]).sample((10,))
+    conddata2 = flow(c_stars[indexs]).sample((30,))
     conddata3 = torch.column_stack((conddata2.mean(axis= 0),torch.zeros(len(z1))))
 
 
